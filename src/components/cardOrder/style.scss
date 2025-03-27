@@ -1,0 +1,22 @@
+.card_order {
+	background-color: #1F242C;
+	border-radius: 16px;
+	padding: 12px 16px;
+	gap: 12px;
+	color: #8F9195;
+;
+}
+
+.grid-col-3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.card_order__item {
+	color: white;
+	margin: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none; /* для Chrome, Safari, Opera */
+  }

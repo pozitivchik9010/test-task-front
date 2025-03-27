@@ -1,0 +1,117 @@
+.home {
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+  color: white;
+}
+.title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 40px 0;
+}
+.btn_contain {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+  padding: 0 16px;
+}
+
+.btn {
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  height: 44px;
+  width: 100%;
+  transition: opacity 0.9 1s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.form {
+  display: grid;
+  gap: 24px;
+  color: white;
+  background-color: #20242c;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.btn_cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.form_btn_contain__head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  background-color: #3b3e45;
+  border-radius: 20px;
+  padding: 4px;
+}
+.btn_selected {
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  padding: 10px 38px;
+}
+.btn__item {
+  background-color: transparent;
+  width: min-content;
+  height: min-content;
+}
+.select {
+  background-color: white;
+  color: black;
+}
+
+.field__cont {
+  display: grid;
+  gap: 8px;
+}
+.checkbox {
+  background-color: red;
+}
+.checkbox__cont {
+  display: flex;
+  gap: 8px;
+  color: #8f9195;
+
+  input {
+    background-color: transparent;
+  }
+}
+.gap--small {
+  gap: 12px;
+}
+
+.align-start {
+  align-content: flex-start;
+}
+.margin--null {
+  margin: 0;
+}

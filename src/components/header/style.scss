@@ -1,0 +1,100 @@
+.header {
+  margin: 0 -12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: #0b1019;
+  padding: 8px 12px;
+}
+.btn-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #232830;
+  color: #fff;
+  padding: 8px;
+  transition: background-color 0.3s;
+  width: max-content;
+  &__logo {
+    width: 80px;
+    height: 36px;
+  }
+}
+
+.btn_contain__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-container button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 50px;
+  background-color: #1a1d25;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-container button:hover {
+  background-color: #2a2d35;
+}
+
+.dropdown-container img {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown-container div.absolute {
+  margin-top: 4px;
+  display: grid;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2c4451;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.dropdown-container div.absolute div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-container div.absolute div:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+//
+
+.dropdown-container {
+  position: relative;
+  .absolute {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border-radius: 4px;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  &.open .absolute {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+  }
+}
