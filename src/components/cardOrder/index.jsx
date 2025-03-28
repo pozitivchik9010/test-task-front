@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Divider from "../divider";
+import { motion } from "framer-motion"; // імпортуємо motion
+
 import "./style.scss";
 
 const Order = ({ orders }) => {
@@ -9,7 +11,13 @@ const Order = ({ orders }) => {
       {order.length > 0 ? (
         order.map((order) => (
           <Link to={`../order/${order.transactionId}`}>
-            <div className="card_order grid-col-3">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }} // Початкове значення (невидимість і зсув)
+              animate={{ opacity: 1, y: 0 }} // Кінцеве значення
+              exit={{ opacity: 0, y: 20 }} // Анімація при видаленні
+              transition={{ duration: 0.5 }}
+              className="card_order grid-col-3"
+            >
               <div>
                 Transaction ID
                 <p className="card_order__item">#{order.transactionId}</p>
@@ -35,7 +43,7 @@ const Order = ({ orders }) => {
                 Amount
                 <p className="card_order__item">${order.amount}</p>
               </div>
-            </div>
+            </motion.div>
           </Link>
         ))
       ) : (

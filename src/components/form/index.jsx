@@ -13,7 +13,7 @@ const Form = ({ btnText }) => {
   return (
     <motion.div
       className="form"
-      initial={isLogin ? { opacity: 0, x: 50 } : { opacity: 0, x: 50 }}
+      initial={isLogin ? { opacity: 0, x: -50 } : { opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       exit={isLogin ? { opacity: 0, x: -50 } : { opacity: 0, x: -50 }}
       transition={{ duration: 0.5 }}
@@ -54,16 +54,16 @@ const Form = ({ btnText }) => {
             <Field placeholder="Password" />
             {!isLogin && <Field placeholder="Confirm Password" />}
           </div>
-          {!isLogin && (
-            <label className="custom-checkbox">
-              <input type="checkbox" />
-              <span className="checkmark"></span>
-              Use social networks
-            </label>
-          )}
-          <Button child={btnText} />
         </motion.div>
       </AnimatePresence>
+      {!isLogin && (
+        <label className="custom-checkbox">
+          <input type="checkbox" />
+          <span className="checkmark"></span>
+          Use social networks
+        </label>
+      )}
+      <Button child={btnText} />
 
       <SocialBlock />
       <a className="link" href="#">

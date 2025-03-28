@@ -3,7 +3,9 @@ import Divider from "../../components/divider";
 import Header from "../../components/header";
 import Button from "../../components/button";
 import closeButton from "../../svg/close.svg";
+import OrderTitle from "../../components/orderTitle";
 import "./style.scss";
+import { motion } from "framer-motion";
 
 const OrderDetails = ({ orders }) => {
   const { id } = useParams();
@@ -15,17 +17,16 @@ const OrderDetails = ({ orders }) => {
     <div className="flex-column gap--small">
       <div className="flex-column gap--small">
         <Header />
-        <div className="btn_contain__head">
-          <Link to="../">
-            <Button
-              className="btn__item btn_contain__head"
-              child={<img src={closeButton} alt="Back button" />}
-            />
-          </Link>
-          <h1 className="title">#{order.transactionId}</h1>
-        </div>
+
+        <OrderTitle imgButton={closeButton} text={`#${order.transactionId}`} />
       </div>
-      <div className="card_order grid-col-3">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.5 }}
+        className="card_order grid-col-3"
+      >
         <div>
           Transaction ID
           <p className="card_order__item">#{order.transactionId}</p>
@@ -51,7 +52,7 @@ const OrderDetails = ({ orders }) => {
           Amount
           <p className="card_order__item">${order.amount}</p>
         </div>
-      </div>
+      </motion.div>
       <div className="btn_cont">
         Your Goods:
         <h3 className="margin--null">1 - 279,99$</h3>

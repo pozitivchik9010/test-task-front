@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Button text="empty" className="btn-header btn-header__logo" />
+      <button text="empty" className="btn-header btn-header__logo"></button>
 
       <div className="btn_contain__head flex gap-2">
         <div
